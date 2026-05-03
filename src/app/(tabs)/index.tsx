@@ -1,7 +1,7 @@
 import HomeHeader from "@/components/HomeHeader";
 import MacroGrid from "@/components/MacroGrid";
+import RecentMeals from "@/components/RecentMeals";
 import { globalStyles } from "@/styles/global";
-import { Link } from "expo-router";
 import { ScrollView, Text } from "react-native";
 
 export default function HomeScreen() {
@@ -10,10 +10,7 @@ export default function HomeScreen() {
       <Text style={globalStyles.title}>MacroZone</Text>
       <HomeHeader />
       <MacroGrid />
-
-      <Link href="/meals" style={[globalStyles.link, { marginTop: 20 }]}>
-        Meals
-      </Link>
+      <RecentMeals />
     </ScrollView>
   );
 }
