@@ -8,7 +8,9 @@ export default function HomeScreen() {
     <ScrollView style={globalStyles.container}>
       <Text style={globalStyles.title}>MacroZone</Text>
       <HomeHeader />
-      <Link href="/meals">Meals</Link>
+      <Link href="/meals" style={globalStyles.link}>
+        Meals
+      </Link>
     </ScrollView>
   );
 }
