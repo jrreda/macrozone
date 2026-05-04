@@ -1,56 +1,60 @@
-# Welcome to your Expo app 👋
+# MacroZone
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+MacroZone is a React Native app for tracking daily calories and macronutrients (protein, carbs, fat). Log meals, see progress against your goals on the home dashboard, and optionally enable meal reminders.
 
-## Get started
+![MacroZone home screen showing macro summary, meal reminders toggle, and recent meals](./assets/images/tabIcons/screen.png)
 
-1. Install dependencies
+## Features
 
-   ```bash
-   npm install
-   ```
+- **Dashboard** — Daily totals for calories, protein, carbs, and fat with color-coded progress against configurable goals.
+- **Meals** — Add meals with macros; browse and manage the full list on a dedicated tab.
+- **Local storage** — Meals persist on device with AsyncStorage.
+- **Sharing & clipboard** — Share a summary or copy it for quick paste elsewhere.
+- **Meal reminders** — Optional local notifications when enabled.
 
-2. Start the app
+## Tech stack
 
-   ```bash
-   npx expo start
-   ```
+- [Expo](https://expo.dev/) SDK 55
+- [Expo Router](https://docs.expo.dev/router/introduction/) (file-based tabs)
+- React 19 / React Native 0.83
+- TypeScript
+- `@react-native-async-storage/async-storage`, `expo-notifications`, `expo-clipboard`
 
-In the output, you'll find options to open the app in a
+## Requirements
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- [Node.js](https://nodejs.org/) (LTS recommended)
+- [npm](https://www.npmjs.com/) or another compatible package manager
+- For device builds: [Expo Go](https://expo.dev/go) or a dev client; for store builds, [EAS Build](https://docs.expo.dev/build/introduction/) (see `eas.json`)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Getting started
 
-## Get a fresh project
-
-When you're ready, run:
+Clone the repository, install dependencies, and start the dev server:
 
 ```bash
-npm run reset-project
+npm install
+npm start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Then press `i` for iOS simulator, `a` for Android emulator, or scan the QR code with Expo Go on a physical device.
 
-### Other setup steps
+### Scripts
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+| Command        | Description                    |
+| -------------- | ------------------------------ |
+| `npm start`    | Start Expo dev server          |
+| `npm run ios`  | Start with iOS target          |
+| `npm run android` | Start with Android target   |
+| `npm run web`  | Start web target               |
+| `npm run lint` | Run Expo lint                  |
 
-## Learn more
+## Project layout
 
-To learn more about developing your project with Expo, look at the following resources:
+- `src/app/` — Expo Router routes and layouts (`(tabs)` for Home, Add Meal, All Meals).
+- `src/components/` — UI pieces (macro grid, meal rows, header, toggles, share/copy).
+- `src/storage/` — AsyncStorage helpers for meals.
+- `src/utils/` — Notifications and related utilities.
+- `assets/` — Images, icons, and splash assets.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## License
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Private project (`"private": true` in `package.json`). Adjust licensing if you open-source the repo.
